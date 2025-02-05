@@ -1,7 +1,10 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Principal {
     public static void main(String[] args){
@@ -20,14 +23,20 @@ public class Principal {
         funcionarios.add(new Funcionario("Helena", LocalDate.of(1996, 09, 02), BigDecimal.valueOf(2799.93), "Operador"));
 
         // Remove o funcionário João da lista
-        funcionarios.remove(f -> f.getNome().equalNome.equalsIgnoreCase("João"));
+        funcionarios.removeIf(f -> f.getNome().equalNome.equalsIgnoreCase("João"));
 
         // Imprime todos os funcionários da lista, com suas infos ja formatadas
         System.out.prinln("Listar Funcoionários:");
         funcionarios.forEach(f-> {
-            System.out.println((f.getNome() + ", Nascimento: " + f.getFormattedDataNascimento() + ", Salário: R$ " + formatarValor(f.getSalario()) + ", Função: " + f.getFuncao());
-            }
-        );
+            System.out.println(f.getNome() + ", Nascimento: " + f.getFormattedDataNascimento() + ", Salário: R$ " + formatarValor(f.getSalario()) + ", Função: " + f.getFuncao());
+            });
 
-    }
+        // Aplicando aumento de 10% no salario base
+        funcionarios.forEach(f-> f.aplicarAumento());
+
+        //Agrupando os funcionarios por função
+        Map<String, List<Funcionario>> grupoPorFuncao = funcionarios.stream().collect(Collectors.groupingBy(Funcionario::getFuncao));
+        System.out.prinln("\nFuncionários agrupados por função:");
+        grupoPorFuncao.forEach((funcao, lista)->{System.out.println(funcao + ":" + lista);
+    });
 }
