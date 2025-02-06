@@ -40,14 +40,16 @@ public class Main {
             String dataFormatada = Util.formatarData(f.getDataNascimento());
             String salarioFormatado = Util.formatarValor(f.getSalario());
             int idade = Util.calcularIdade(f.getDataNascimento());
-            System.out.printf("%s, Nascido em: %s, Salário Com Aumento: %s, Idade: %d anos\n",
+            System.out.printf("%s, Nascido em: %s, Salário + Aumento: %s, Idade: %d anos\n",
                     f.getNome(), dataFormatada, salarioFormatado, idade);
         });
 
-        // Encontrar e imprimir o funcionário mais velho
-        FuncionarioService.encontrarMaisVelho(funcionarios);
-        String dataFormatada = Util.formatarData(.getDataNascimento());
-        int idade = Util.calcularIdade(f.getDataNascimento())
-                .ifPresent(f -> System.out.println("Funcionário mais velho: " + f.getNome() + "Idade: " + "%d anos"));
+        // Encontrar e imprimir o funcionário mais velho com a idade
+        FuncionarioService.encontrarMaisVelho(funcionarios).ifPresent(f -> {
+            String dataFormatada = Util.formatarData(f.getDataNascimento());
+            int idade = Util.calcularIdade(f.getDataNascimento());
+            System.out.printf("Funcionário mais velho: %s, Data de Nascimento: %s, Idade: %d anos\n",
+                    f.getNome(), dataFormatada, idade);
+        });
     }
 }
