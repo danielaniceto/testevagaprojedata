@@ -5,16 +5,17 @@ Considerando que uma indústria possui as pessoas/funcionários abaixo:
 
 Diante disso, você deve desenvolver um projeto java, com os seguintes requisitos:
 
-1– Classe Pessoa com os atributos: nome (String) e data nascimento (LocalDate).
+1– Classe Pessoa com os atributos: nome (String) e data nascimento (LocalDate) - ✔
 
-2 – Classe Funcionário que estenda a classe Pessoa, com os atributos: salário (BigDecimal) e função (String).
+2 – Classe Funcionário que estenda a classe Pessoa, com os atributos: salário (BigDecimal) e função (String) -✔
 
 3 – Deve conter uma classe Principal para executar as seguintes ações:
-3.1 – Inserir todos os funcionários, na mesma ordem e informações da tabela acima.
-3.2 – Remover o funcionário “João” da lista.
-3.3 – Imprimir todos os funcionários com todas suas informações, sendo que:
-• informação de data deve ser exibido no formato dd/mm/aaaa;
-• informação de valor numérico deve ser exibida no formatado com separador de milhar como ponto e decimal como vírgula.
+  3.1 – Inserir todos os funcionários, na mesma ordem e informações da tabela acima - ✔
+  
+  3.2 – Remover o funcionário “João” da lista.
+  3.3 – Imprimir todos os funcionários com todas suas informações, sendo que:
+    • informação de data deve ser exibido no formato dd/mm/aaaa;
+    • informação de valor numérico deve ser exibida no formatado com separador de milhar como ponto e decimal como vírgula.
 3.4 – Os funcionários receberam 10% de aumento de salário, atualizar a lista de funcionários com novo valor.
 3.5 – Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
 3.6 – Imprimir os funcionários, agrupados por função.
