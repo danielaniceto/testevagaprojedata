@@ -16,6 +16,7 @@ Diante disso, você deve desenvolver um projeto java, com os seguintes requisito
   3.2 – Remover o funcionário “João” da lista - ✔
   
   3.3 – Imprimir todos os funcionários com todas suas informações, sendo que:
+  
     • informação de data deve ser exibido no formato dd/mm/aaaa - ✔
     • informação de valor numérico deve ser exibida no formatado com separador de milhar como ponto e decimal como vírgula - ✔
     
