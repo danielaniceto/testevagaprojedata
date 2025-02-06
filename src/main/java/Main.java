@@ -1,7 +1,8 @@
-import model.Funcionario;
+package main.java;
 
-import FuncionarioService;
-import Util;
+import main.java.model.Funcionario;
+import main.java.services.FuncionarioService;
+import main.java.util.Util;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -26,10 +27,12 @@ public class Main {
         funcionarios.add(new Funcionario("Helena", LocalDate.of(1996, 9, 2), BigDecimal.valueOf(2799.93), "Operador"));
 
         // Remover funcionário João
-        FuncionarioService.removerFuncionario(funcionarios, "João");
+        System.out.println("Funcionários João Removido");
+        main.java.services.FuncionarioService.removerFuncionario(funcionarios, "João");
 
         // Aplicar aumento de 10%
-        FuncionarioService.aplicarAumento(funcionarios, 10);
+        System.out.println("Aplicado 10% de aumento");
+        main.java.services.FuncionarioService.aplicarAumento(funcionarios, 10);
 
         // Imprimir funcionários formatados
         System.out.println("Funcionários atualizados:");
@@ -37,12 +40,14 @@ public class Main {
             String dataFormatada = Util.formatarData(f.getDataNascimento());
             String salarioFormatado = Util.formatarValor(f.getSalario());
             int idade = Util.calcularIdade(f.getDataNascimento());
-            System.out.printf("%s, Nascido em: %s, Salário: %s, Idade: %d anos\n",
+            System.out.printf("%s, Nascido em: %s, Salário Com Aumento: %s, Idade: %d anos\n",
                     f.getNome(), dataFormatada, salarioFormatado, idade);
         });
 
         // Encontrar e imprimir o funcionário mais velho
-        FuncionarioService.encontrarMaisVelho(funcionarios)
-                .ifPresent(f -> System.out.println("Funcionário mais velho: " + f.getNome()));
+        FuncionarioService.encontrarMaisVelho(funcionarios);
+        String dataFormatada = Util.formatarData(.getDataNascimento());
+        int idade = Util.calcularIdade(f.getDataNascimento())
+                .ifPresent(f -> System.out.println("Funcionário mais velho: " + f.getNome() + "Idade: " + "%d anos"));
     }
 }

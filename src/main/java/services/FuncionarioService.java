@@ -1,6 +1,7 @@
-package model;
+package main.java.services;
 
-import Funcionario;
+import main.java.model.Funcionario;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;

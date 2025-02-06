@@ -1,3 +1,5 @@
+package main.java.model;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -23,4 +25,3 @@ public class Pessoa {
         return dataNascimento.format(formatter);
     }
 }
-
