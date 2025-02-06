@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -50,6 +51,13 @@ public class Main {
             int idade = Util.calcularIdade(f.getDataNascimento());
             System.out.printf("Funcionário mais velho: %s, Data de Nascimento: %s, Idade: %d anos\n",
                     f.getNome(), dataFormatada, idade);
+        });
+
+        // Agrupando funcionarios por função
+        Map<String, List<Funcionario>> agrupados = FuncionarioService.agruparPorFuncao(funcionarios);
+        agrupados.forEach((funcao, lista) -> {
+            System.out.println("Função: " + funcao);
+            lista.forEach(f -> System.out.print(" - " + f.getNome()));
         });
     }
 }

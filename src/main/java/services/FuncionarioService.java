@@ -4,6 +4,7 @@ import main.java.model.Funcionario;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -33,5 +34,11 @@ public class FuncionarioService {
         return funcionarios.stream()
                 .sorted((f1, f2) -> f1.getNome().compareToIgnoreCase(f2.getNome()))
                 .collect(Collectors.toList());
+    }
+
+    // Agrupar funcionários por função
+    public static Map<String, List<Funcionario>> agruparPorFuncao(List<Funcionario> funcionarios) {
+        return funcionarios.stream()
+                .collect(Collectors.groupingBy(Funcionario::getFuncao));
     }
 }
