@@ -53,8 +53,36 @@ public class FuncionarioService {
         funcionarios.forEach(f -> {
             BigDecimal qtdSalarios = f.getSalario()
                     .divide(SALARIO_MINIMO, 2, RoundingMode.HALF_UP);
-            System.out.printf("Funcionário: %s, Slãrio: %s, Salários Mínimos: %s\n",
+            System.out.printf("\nFuncionário: %s, Salário: %s, Quantidade de Salários Mínimos: %s",
                     f.getNome(), Util.formatarValor(f.getSalario()), DECIMAL_FORMAT.format(qtdSalarios));
         });
+    }
+
+    // Imprimir os funcionarios que fazem aniversario no mês 10 e 12
+    public static void  imprimirAniversariantesMes(List<Funcionario> funcionarios) {
+        List<Integer> mesesFiltro = List.of(10, 12);
+
+        funcionarios.stream()
+                .filter(f -> mesesFiltro.contains(f.getDataNascimento().getMonthValue()))
+                .forEach(f -> {
+                    String dataFormatada = Util.formatarData(f.getDataNascimento());
+                    System.out.println("Funcionários: " + f.getNome() + ", Data de Nascimento:" + dataFormatada);
+                });
+    }
+
+    // Imprimir a lista de funcionários por ordem alfabética.
+    public static void imprimiOrdemAlfabetica(List<Funcionario> funcionarios) {
+        funcionarios.stream()
+                .sorted((f1, f2) -> f1.getNome().compareToIgnoreCase(f2.getNome()))
+                .forEach(f -> System.out.println("\nFuncionários: " + f.getNome() + ", função: " +f.getFuncao() + ", Salário: " + f.getSalario()));
+    }
+
+    // Calcular e imprimir o total dos salários dos funcionários
+    public static void imprimirTotalSalarios(List<Funcionario> funcionarios) {
+        BigDecimal totalSalarios = funcionarios.stream()
+                .map(Funcionario::getSalario)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        System.out.printf("\nTotal dos salários dos funcionários: R$ %.2f%n", totalSalarios);
     }
 }

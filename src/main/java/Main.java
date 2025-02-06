@@ -41,7 +41,7 @@ public class Main {
             String dataFormatada = Util.formatarData(f.getDataNascimento());
             String salarioFormatado = Util.formatarValor(f.getSalario());
             int idade = Util.calcularIdade(f.getDataNascimento());
-            System.out.printf("%s, Nascido em: %s, Salário + Aumento: %s, Idade: %d anos\n\n",
+            System.out.printf("\n%s, Nascido em: %s, Salário + Aumento: %s, Idade: %d anos\n",
                     f.getNome(), dataFormatada, salarioFormatado, idade);
         });
 
@@ -49,18 +49,28 @@ public class Main {
         FuncionarioService.encontrarMaisVelho(funcionarios).ifPresent(f -> {
             String dataFormatada = Util.formatarData(f.getDataNascimento());
             int idade = Util.calcularIdade(f.getDataNascimento());
-            System.out.printf("Funcionário mais velho: %s, Data de Nascimento: %s, Idade: %d anos\n",
+            System.out.printf("\nFuncionário mais velho: %s, Data de Nascimento: %s, Idade: %d anos\n",
                     f.getNome(), dataFormatada, idade);
         });
 
         // Agrupando funcionarios por função
         Map<String, List<Funcionario>> agrupados = FuncionarioService.agruparPorFuncao(funcionarios);
         agrupados.forEach((funcao, lista) -> {
-            System.out.println("Função: " + funcao);
+            System.out.println("Função: \n" + funcao);
             lista.forEach(f -> System.out.print(" - " + f.getNome()));
         });
 
-        // Imprimir quantidade de salarios por funcionário
+        // Imprimir quantidade de salarios minimos por funcionário
         FuncionarioService.imprimirSalariosMinimos(funcionarios);
+
+        // Imprimir os funcionários que fazem aniversário no mês 10 e 12
+        System.out.println("\n\nFuncionários que fazem aniversário nos meses 10 e 12:");
+        FuncionarioService.imprimirAniversariantesMes(funcionarios);
+
+        // Imprimir a lista de funcionários por ordem alfabética.
+        FuncionarioService.imprimiOrdemAlfabetica(funcionarios);
+
+        //Imprimir o total de salarios de todos os funcionarios
+        FuncionarioService.imprimirTotalSalarios(funcionarios);
     }
 }
