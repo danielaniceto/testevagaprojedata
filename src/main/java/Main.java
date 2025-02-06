@@ -41,7 +41,7 @@ public class Main {
             String dataFormatada = Util.formatarData(f.getDataNascimento());
             String salarioFormatado = Util.formatarValor(f.getSalario());
             int idade = Util.calcularIdade(f.getDataNascimento());
-            System.out.printf("%s, Nascido em: %s, Salário + Aumento: %s, Idade: %d anos\n",
+            System.out.printf("%s, Nascido em: %s, Salário + Aumento: %s, Idade: %d anos\n\n",
                     f.getNome(), dataFormatada, salarioFormatado, idade);
         });
 
@@ -59,5 +59,8 @@ public class Main {
             System.out.println("Função: " + funcao);
             lista.forEach(f -> System.out.print(" - " + f.getNome()));
         });
+
+        // Imprimir quantidade de salarios por funcionário
+        FuncionarioService.imprimirSalariosMinimos(funcionarios);
     }
 }
