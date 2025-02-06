@@ -27,15 +27,15 @@ Diante disso, você deve desenvolver um projeto java, com os seguintes requisito
 
 3.6 – Imprimir os funcionários, agrupados por função - ✔
 
-3.8 – Imprimir os funcionários que fazem aniversário no mês 10 e 12 - 
+3.8 – Imprimir os funcionários que fazem aniversário no mês 10 e 12 - ✔
 
 3.9 – Imprimir o funcionário com a maior idade, exibir os atributos: nome e idade - ✔
 
-3.10 – Imprimir a lista de funcionários por ordem alfabética.
+3.10 – Imprimir a lista de funcionários por ordem alfabética - ✔
 
-3.11 – Imprimir o total dos salários dos funcionários.
+3.11 – Imprimir o total dos salários dos funcionários - ✔
 
-3.12 – Imprimir quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00.
+3.12 – Imprimir quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00 - ✔
 
 Orientações gerais:
 
