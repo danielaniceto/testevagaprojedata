@@ -17,8 +17,8 @@ Diante disso, você deve desenvolver um projeto java, com os seguintes requisito
   
   3.3 – Imprimir todos os funcionários com todas suas informações, sendo que:
   
-    • informação de data deve ser exibido no formato dd/mm/aaaa - ✔
-    • informação de valor numérico deve ser exibida no formatado com separador de milhar como ponto e decimal como vírgula - ✔
+  • informação de data deve ser exibido no formato dd/mm/aaaa - ✔
+  • informação de valor numérico deve ser exibida no formatado com separador de milhar como ponto e decimal como vírgula - ✔
     
 3.4 – Os funcionários receberam 10% de aumento de salário, atualizar a lista de funcionários com novo valor.
 3.5 – Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
